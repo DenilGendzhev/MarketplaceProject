@@ -1,4 +1,7 @@
 package com.example.Marketplace.repositories;
 
-public interface InterestRepository {
+import com.example.Marketplace.entities.User;
+import org.springframework.data.repository.CrudRepository;
+
+public interface InterestRepository extends CrudRepository<User, Long> {
 }
