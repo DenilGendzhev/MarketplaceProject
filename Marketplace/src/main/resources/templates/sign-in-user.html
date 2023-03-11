@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign in user</title>
-    <form></form>
-
 </head>
 <body>
-
+<h1>User</h1>
+<form action="#" th:action="@{/marketplace/user}" th:object="${user}" method="post">
+    <label>First Name: <input type="text" th:field="*{firstName}" /></label><br/>
+    <label>Last name: <input type="text" th:field="*{lastName}" /></label><br/>
+    <label>Email: <input type="email" th:field="*{email}" /></label><br/>
+    <label>Password: <input type="text" th:field="*{password}" /></label><br/>
+    <p><input type="submit" value="Sign in"/> <input type="reset" value="Reset"/></p>
+</form>
 </body>
 </html>
