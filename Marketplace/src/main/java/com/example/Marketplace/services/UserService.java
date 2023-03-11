@@ -6,7 +6,6 @@ import com.example.Marketplace.repositories.InterestRepository;
 import com.example.Marketplace.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.validation.constraints.Email;
 
 public class UserService {
 

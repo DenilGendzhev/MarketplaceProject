@@ -2,17 +2,17 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>MarketPlace</title>
+    <title>Marketplace</title>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Marketplace</h1>
-        </header>
-            <h2>Изберете роля</h2>
-            <a th:href="@{/user/create}" class="btn btn-outline-dark">User</a></td>
-            <a th:href="@{/organization/create}" class="btn btn-outline-dark" id="button">Organization</a>
-    </div>
+<div class="container">
+    <header class="header">
+        <h1>Marketplace</h1>
+    </header>
+    <h2>Choose role</h2>
+    <a th:href="@{/marketplace/user}" class="btn btn-outline-dark">User</a><br>
+    <a th:href="@{/marketplace/organization-manager}" class="btn btn-outline-dark">Organization Manager</a><br>
+    <a th:href="@{/marketplace/admin}" class="btn btn-outline-dark">Admin</a>
 </div>
 </body>
 </html>
