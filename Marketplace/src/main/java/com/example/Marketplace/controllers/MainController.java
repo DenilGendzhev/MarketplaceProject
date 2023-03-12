@@ -1,6 +1,7 @@
 package com.example.Marketplace.controllers;
 
 import com.example.Marketplace.entities.Admin;
+import com.example.Marketplace.entities.Filter;
 import com.example.Marketplace.entities.OrgManager;
 import com.example.Marketplace.entities.User;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,12 @@ public class MainController {
     public String signInAdmin(Model model) {
         model.addAttribute("admin", new Admin());
         return "sign-in-admin";
+    }
+
+    @PostMapping("/admin")
+    public String manageFilters(Model model) {
+        model.addAttribute("filter", new Filter());
+        return "admin-filters";
     }
 
     @GetMapping("/organization-manager")

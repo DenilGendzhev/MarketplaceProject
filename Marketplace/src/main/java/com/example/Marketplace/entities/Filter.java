@@ -1,7 +1,5 @@
 package com.example.Marketplace.entities;
 
-import org.springframework.context.annotation.FilterType;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,13 +9,9 @@ public class Filter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String name;
-
+    private String type;
+    private String value;
     private boolean mandatory;
-
-    private FilterType type;
-
     @OneToMany(mappedBy = "filter")
     private List<FilterValue> values;
 
@@ -29,28 +23,20 @@ public class Filter {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public boolean isMandatory() {
-        return mandatory;
-    }
-
-    public void setMandatory(boolean mandatory) {
-        this.mandatory = mandatory;
-    }
-
-    public FilterType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(FilterType type) {
+    public void setType(String type) {
         this.type = type;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public List<FilterValue> getValues() {
@@ -60,7 +46,16 @@ public class Filter {
     public void setValues(List<FilterValue> values) {
         this.values = values;
     }
+
+    public boolean isMandatory() {
+        return mandatory;
+    }
+
+    public void setMandatory(boolean mandatory) {
+        this.mandatory = mandatory;
+    }
 }
+
 
 
 
