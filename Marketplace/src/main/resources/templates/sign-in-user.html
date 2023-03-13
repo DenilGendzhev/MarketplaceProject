@@ -33,15 +33,27 @@
             <br>
         </header>
     </div>
-<div class="form">
-    <form action="#" th:action="@{/marketplace/user}" th:object="${user}" method="post">
-    <label style="font-size: 15px; color: #333;">First Name: <input type="text" th:field="*{firstName}" /></label><br/>
-    <label style="font-size: 15px; color: #333;">Last name: <input type="text" th:field="*{lastName}" /></label><br/>
-    <label style="font-size: 15px; color: #333;">Email: <input type="email" th:field="*{email}" /></label><br/>
-    <label style="font-size: 15px; color: #333;">Password: <input type="text" th:field="*{password}" /></label><br/>
-    <p><input type="submit" value="Sign in" style="background-color: #4CAF50; color: white; font-size: 16px; border: none; border-radius: 3px; padding: 8px 12px;"/> 
-        <input type="reset" value="Reset"style="background-color: #ff0000; color: white; font-size: 16px; border: none; border-radius: 3px; padding: 8px 12px;"/></p>
-</form>
-</div>
+    <div class="form">
+        <form action="#" th:action="@{/marketplace/user}" th:object="${user}" method="post">
+          <div style="display: inline-block;">
+            <label style="font-size: 15px; color: #333;">First Name:</label> <input type="text" th:field="*{firstName}" />
+          </div>
+          <br>
+          <div style="display: inline-block;">
+            <label style="font-size: 15px; color: #333;">Last name:</label> <input type="text" th:field="*{lastName}" />
+          </div>
+          <br>
+          <div style="display: inline-block;">
+            <label style="font-size: 15px; color: #333;">Email:</label> <input type="email" th:field="*{email}" />
+          </div>
+          <br>
+          <div style="display: inline-block;">
+            <label style="font-size: 15px; color: #333;">Password:</label> <input type="password" th:field="*{password}" />
+          </div>
+          <br>
+          <p><input type="submit" value="Sign in" style="background-color: #4cc550; color: white; font-size: 16px; border: none; border-radius: 3px; padding: 8px 12px;"/> 
+             <input type="reset" value="Reset" style="background-color: #f43729; color: white; font-size: 16px; border: none; border-radius: 3px; padding: 8px 12px;"/></p>
+        </form>
+      </div>
 </body>
 </html>
