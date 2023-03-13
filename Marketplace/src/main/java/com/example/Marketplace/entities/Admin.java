@@ -8,8 +8,8 @@ import java.util.List;
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
-    private String title;
     private String email;
     private String password;
     List<Filter> filters;
@@ -21,15 +21,6 @@ public class Admin {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getEmail() {
         return email;
     }
