@@ -1,6 +1,8 @@
 package com.example.Marketplace.controllers;
 
+import com.example.Marketplace.entities.Admin;
 import com.example.Marketplace.entities.Filter;
+import com.example.Marketplace.repositories.AdminRepository;
 import com.example.Marketplace.repositories.FilterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,13 +19,26 @@ public class AdminController {
     @Autowired
     FilterRepository filterRepository;
 
+    @Autowired
+    AdminRepository adminRepository;
+
     private final List<Filter> filters = new ArrayList<>();
 
+    @GetMapping("/sign-in")
+    public String showRegistrationForm(Model model) {
+        model.addAttribute("admin", new Admin());
+        return "sign-in-admin";
+    }
+
+    @PostMapping("/sign-in")
+    public String processRegistrationForm(@ModelAttribute("admin") Admin admin) {
+        adminRepository.save(admin);
+        return "redirect:/admin/filters";
+    }
+
     @GetMapping("/filters")
-    public String addFilter(Model model) {
-        Filter filter = new Filter();
-        model.addAttribute("filters", filter);
-        filterRepository.save(filter);
+    public String manageFilters(Model model) {
+        model.addAttribute("filter", new Filter());
         return "admin-filters";
     }
 

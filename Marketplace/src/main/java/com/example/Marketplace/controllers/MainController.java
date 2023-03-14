@@ -35,14 +35,10 @@ public class MainController {
     @GetMapping("/admin")
     public String signInAdmin(Model model) {
         model.addAttribute("admin", new Admin());
-        return "sign-in-admin";
+        return "redirect:/admin/sign-in";
     }
 
-    @PostMapping("/admin")
-    public String manageFilters(Model model) {
-        model.addAttribute("filter", new Filter());
-        return "admin-filters";
-    }
+
 
     @GetMapping("/organization-manager")
     public String signInOrgManager(Model model) {

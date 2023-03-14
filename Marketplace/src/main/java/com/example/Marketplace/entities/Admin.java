@@ -1,10 +1,11 @@
 package com.example.Marketplace.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
 
+@Entity
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +13,6 @@ public class Admin {
     private Integer id;
     private String email;
     private String password;
-    List<Filter> filters;
 
     public Integer getId() {
         return id;
@@ -35,13 +35,5 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Filter> getFilters() {
-        return filters;
-    }
-
-    public void setFilters(List<Filter> filters) {
-        this.filters = filters;
     }
 }
