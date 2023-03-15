@@ -35,7 +35,7 @@
         </header>
     </div>
     <div class="form">
-        <form action="#" th:action="@{/marketplace/user}" th:object="${user}" method="post">
+        <form action="#" th:action="@{/user/sign-in}" th:object="${user}" method="post">
           <div style="display: inline-block;">
             <label style="font-size: 15px; color: #333;">First Name:</label> <input type="text" th:field="*{firstName}" />
           </div>

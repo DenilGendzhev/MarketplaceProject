@@ -47,6 +47,6 @@ public class MainController {
     @GetMapping("/user")
     public String signInUser(Model model) {
         model.addAttribute("user", new User());
-        return "sign-in-user";
+        return "redirect:/user/sign-in";
     }
 }
