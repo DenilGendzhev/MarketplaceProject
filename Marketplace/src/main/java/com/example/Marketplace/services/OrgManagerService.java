@@ -15,11 +15,4 @@ public class OrgManagerService {
 
     @Autowired
     AdRepository adRepository;
-    public OrgManager orgManager(Role role,String title, String email){
-        OrgManager orgManager = new OrgManager();
-        orgManager.setTitle(title);
-        orgManager.setEmail(email);
-        organizationRepository.save(orgManager);
-        return orgManager;
-    }
 }

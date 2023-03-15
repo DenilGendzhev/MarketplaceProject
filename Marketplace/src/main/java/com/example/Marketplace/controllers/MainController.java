@@ -25,8 +25,8 @@ public class MainController {
     public String register(@RequestParam("role") String role) {
         if (role.equals("admin")) {
             return "redirect:/admin";
-        } else if (role.equals("organization-manager")) {
-            return "redirect:/organization-manager";
+        } else if (role.equals("org-manager")) {
+            return "redirect:/org-manager";
         } else {
             return "redirect:/user";
         }
@@ -38,12 +38,10 @@ public class MainController {
         return "redirect:/admin/sign-in";
     }
 
-
-
-    @GetMapping("/organization-manager")
+    @GetMapping("/org-manager")
     public String signInOrgManager(Model model) {
         model.addAttribute("orgManager", new OrgManager());
-        return "sign-in-org-manager";
+        return "redirect:/org-manager/sign-in";
     }
 
     @GetMapping("/user")
