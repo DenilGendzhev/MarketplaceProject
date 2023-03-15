@@ -24,7 +24,7 @@ public class OrgManagerController {
     }
 
     @PostMapping("/sign-in")
-    public String processRegistrationForm(@ModelAttribute("orgManager")OrgManager orgManager) {
+    public String processRegistrationForm(@ModelAttribute("orgManager") OrgManager orgManager) {
         orgManagerRepository.save(orgManager);
         return "";
     }
