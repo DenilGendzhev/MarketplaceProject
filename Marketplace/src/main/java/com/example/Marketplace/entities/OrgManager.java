@@ -10,8 +10,6 @@ public class OrgManager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Size(min=2, max=30)
-    private String title;
     @Email
     private String email;
     private String password;
@@ -22,14 +20,6 @@ public class OrgManager {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getEmail() {

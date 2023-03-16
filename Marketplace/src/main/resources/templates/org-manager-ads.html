@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add an ad</title>
+</head>
+<body>
+<h1>Add an ad</h1>
+<form action="#" th:action="@{/org-manager/ads/add}" th:object="${ad}" method="post">
+    <label>Title: <input type="text" th:field="*{title}" /></label><br/>
+    <label>Type: <input type="text" th:field="*{type}" /></label><br/>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>
