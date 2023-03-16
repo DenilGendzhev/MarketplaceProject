@@ -33,17 +33,6 @@ public class AdminController {
     @PostMapping("/sign-in")
     public String processRegistrationForm(@ModelAttribute("admin") Admin admin) {
         adminRepository.save(admin);
-        return "redirect:/admin/filters";
-    }
-
-    @GetMapping("/filters")
-    public String manageFilters(Model model) {
-        model.addAttribute("filter", new Filter());
-        return "admin-filters";
-    }
-
-    @PostMapping("/filters")
-    public @ResponseBody Iterable<Filter> showFilters() {
-        return filterRepository.findAll();
+        return "redirect:/admin/filters/add";
     }
 }

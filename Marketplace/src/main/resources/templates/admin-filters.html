@@ -30,7 +30,7 @@
     </header>
 </div>
 <div class="form">
-<form action="#" th:action="@{/marketplace/admin}" th:object="${filter}" method="post">
+<form action="#" th:action="@{/admin/filters/add}" th:object="${filter}" method="post">
     <h2>Add a filter</h2>
     <div style="display: inline-block;">
         <label style="font-size: 15px; color: #333;">Type: <input type="text" th:field="*{type}" /></label><br/>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Filters</title>
+</head>
+<body>
+<br/>
+<h2>Current Filters</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="filter : ${filters}">
+        <td th:text="${filter.type}"></td>
+        <td th:text="${filter.value}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<a href="/admin/filters/add">Add another filter</a>
+</body>
+</html>
