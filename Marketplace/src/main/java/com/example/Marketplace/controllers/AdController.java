@@ -1,7 +1,6 @@
 package com.example.Marketplace.controllers;
 
 import com.example.Marketplace.entities.Ad;
-import com.example.Marketplace.entities.Filter;
 import com.example.Marketplace.repositories.AdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +26,7 @@ public class AdController {
     @PostMapping("/add")
     public String createAd(@ModelAttribute("ad") Ad ad, Model model) {
         adRepository.save(ad);
-        model.addAttribute("ad", adRepository.findAll());
+        model.addAttribute("ads", adRepository.findAll());
         return "ads-result";
     }
 }

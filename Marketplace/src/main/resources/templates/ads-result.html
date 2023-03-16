@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ads</title>
 </head>
 <body>
-
+<br/>
+<h2>Current Ads</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ad : ${ads}">
+        <td th:text="${ad.title}"></td>
+        <td th:text="${ad.type}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<a href="/org-manager/ads/add">Add another filter</a>
 </body>
 </html>
