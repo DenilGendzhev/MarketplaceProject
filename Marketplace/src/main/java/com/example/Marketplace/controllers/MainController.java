@@ -1,7 +1,6 @@
 package com.example.Marketplace.controllers;
 
 import com.example.Marketplace.entities.Admin;
-import com.example.Marketplace.entities.Filter;
 import com.example.Marketplace.entities.OrgManager;
 import com.example.Marketplace.entities.User;
 import org.springframework.stereotype.Controller;
