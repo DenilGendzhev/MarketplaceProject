@@ -1,6 +1,9 @@
 package com.example.Marketplace.controllers;
 
+import com.example.Marketplace.entities.Ad;
+import com.example.Marketplace.entities.Event;
 import com.example.Marketplace.entities.OrgManager;
+import com.example.Marketplace.repositories.AdRepository;
 import com.example.Marketplace.repositories.OrgManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,7 @@ public class OrgManagerController {
 
     @Autowired
     OrgManagerRepository orgManagerRepository;
+    AdRepository adRepository;
 
     @GetMapping("/sign-in")
     public String showRegistrationForm(Model model) {
@@ -27,5 +31,13 @@ public class OrgManagerController {
     public String processRegistrationForm(@ModelAttribute("orgManager") OrgManager orgManager) {
         orgManagerRepository.save(orgManager);
         return "redirect:/org-manager/ads/add";
+    }
+
+    @GetMapping("/your-events")
+    private String showYourEvents(OrgManager organization, Model model){
+        model.addAttribute("organization", organization);
+        Iterable<Ad> events = adRepository.findAll();
+        model.addAttribute("events", events);
+        return "organization-events";
     }
 }
