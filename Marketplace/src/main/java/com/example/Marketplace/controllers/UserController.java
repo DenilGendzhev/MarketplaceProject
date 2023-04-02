@@ -36,4 +36,10 @@ public class UserController {
         return "";
     }
 
+    @GetMapping("/see-ads")
+    public String showAdsToUser(Model model) {
+        model.addAttribute("user", new User());
+        return "ads-results"; //tuka ne e mnogo vqrno, dali trqbva nov html za vsichki obqvi
+    }
+
 }
