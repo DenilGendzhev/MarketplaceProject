@@ -36,6 +36,9 @@
     <form action="#" th:action="@{/org-manager/sign-in}" th:object="${orgManager}" method="post">
         <div style="display: inline-block;">
         </div>
+        <div style="display: inline-block;">
+            <label style="font-size: 15px; color: #333;">Title:</label> <input type="title" th:field="*{title}" />
+        </div>
       <br>
         <div style="display: inline-block;">
             <label style="font-size: 15px; color: #333;">Email:</label> <input type="email" th:field="*{email}" />
