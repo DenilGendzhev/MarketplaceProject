@@ -1,7 +1,6 @@
 package com.example.Marketplace.controllers;
 
 import com.example.Marketplace.entities.Ad;
-import com.example.Marketplace.entities.Event;
 import com.example.Marketplace.entities.OrgManager;
 import com.example.Marketplace.repositories.AdRepository;
 import com.example.Marketplace.repositories.OrgManagerRepository;

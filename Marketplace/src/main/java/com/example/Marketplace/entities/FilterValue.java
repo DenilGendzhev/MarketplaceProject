@@ -7,11 +7,11 @@ public class FilterValue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column(nullable = false)
     private String value;
 
-    @ManyToOne
-    @JoinColumn(name = "filter_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "filter_id", nullable = false)
     private Filter filter;
 
     public Integer getId() {

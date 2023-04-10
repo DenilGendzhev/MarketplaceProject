@@ -1,7 +1,7 @@
 package com.example.Marketplace.entities;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Filter {
@@ -13,7 +13,7 @@ public class Filter {
     private String value;
     private boolean mandatory;
     @OneToMany(mappedBy = "filter")
-    private List<FilterValue> values;
+    private Set<FilterValue> values;
 
     public Long getId() {
         return id;
@@ -39,11 +39,11 @@ public class Filter {
         this.value = value;
     }
 
-    public List<FilterValue> getValues() {
+    public Set<FilterValue> getValues() {
         return values;
     }
 
-    public void setValues(List<FilterValue> values) {
+    public void setValues(Set<FilterValue> values) {
         this.values = values;
     }
 

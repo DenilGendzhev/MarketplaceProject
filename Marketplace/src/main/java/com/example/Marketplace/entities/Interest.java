@@ -10,8 +10,7 @@ public class Interest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String interestName;
-
+    private String type; //ad type
     public Integer getId() {
         return id;
     }
@@ -20,11 +19,11 @@ public class Interest {
         this.id = id;
     }
 
-    public String getInterestName() {
-        return interestName;
+    public String getType() {
+        return type;
     }
 
-    public void setInterestName(String interestName) {
-        this.interestName = interestName;
+    public void setType(String type) {
+        this.type = type;
     }
 }

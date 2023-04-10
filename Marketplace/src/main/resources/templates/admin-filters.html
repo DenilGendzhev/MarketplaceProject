@@ -30,20 +30,35 @@
     </header>
 </div>
 <div class="form">
-<form action="#" th:action="@{/admin/filters/add}" th:object="${filter}" method="post">
-    <h2>Add a filter</h2>
-    <div style="display: inline-block;">
-        <label style="font-size: 15px; color: #333;">Type: <input type="text" th:field="*{type}" /></label><br/>
-    </div>
-    <div style="display: inline-block;">
-        <label style="font-size: 15px; color: #333;">Description: <input type="text" th:field="*{value}" /></label><br/>
-    </div>
-    <div style="display: inline-block;">
-        <label >Mandatory: <input type="checkbox" th:field="*{mandatory}" /></label><br/>
-    </div>
-    <p><input type="submit" value="Add"/> <input type="reset" value="Reset"/></p>
-</form>
+    <form action="#" th:action="@{/admin/filters/add}" th:object="${filter}" method="post">
+        <h2>Add a filter</h2>
+        <div style="display: inline-block;">
+            <label style="font-size: 15px; color: #333;">Type: <input type="text" th:field="*{type}" /></label><br/>
+        </div>
+        <div>
+            <label style="font-size: 15px; color: #333;">Values:</label><br/>
+            <div id="values-container">
+                <input type="text" name="values[]" /><br/>
+            </div>
+            <button type="button" onclick="addValue()">Add Value</button>
+        </div>
+        <div style="display: inline-block;">
+            <label >Mandatory: <input type="checkbox" th:field="*{mandatory}" /></label><br/>
+        </div>
+        <p><input type="submit" value="Add"/> <input type="reset" value="Reset"/></p>
+    </form>
 </div>
+
+<script>
+    function addValue() {
+        var container = document.getElementById("values-container");
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "values[]";
+        container.appendChild(input);
+        container.appendChild(document.createElement("br"));
+    }
+</script>
 <br>
     <br>
     <br>

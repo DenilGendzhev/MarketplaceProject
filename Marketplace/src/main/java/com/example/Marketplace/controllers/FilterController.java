@@ -22,8 +22,8 @@ public class FilterController {
     }
 
     @PostMapping("/add")
-    public String createFilter(@ModelAttribute("filter") Filter filter, Model model) {
-        filterRepository.save(filter);
+    public String saveFilter(@ModelAttribute("filter") Filter formFilter, Model model) {
+        filterRepository.save(formFilter);
         model.addAttribute("filters", filterRepository.findAll());
         return "filters-result";
     }
@@ -32,7 +32,7 @@ public class FilterController {
     public String showAllFilters(Admin admin, Model model)  {
         model.addAttribute("admin", admin);
         Iterable<Filter> filters = filterRepository.findAll();
-       model.addAttribute("filters", filters);
+        model.addAttribute("filters", filters);
         return "all-filters";
     }
 }
