@@ -1,15 +1,16 @@
 package com.example.Marketplace.controllers;
 
+import com.example.Marketplace.entities.Ad;
+import com.example.Marketplace.entities.Interest;
 import com.example.Marketplace.entities.User;
 import com.example.Marketplace.repositories.InterestRepository;
 import com.example.Marketplace.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @Controller
@@ -37,5 +38,19 @@ public class UserController {
         model.addAttribute("user", new User());
         return "ads-results"; //tuka ne e mnogo vqrno, dali trqbva nov html za vsichki obqvi
     }
+    @GetMapping("/profile")
+    public String showUserProfile(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "user-profile";
+    }
+
+    @GetMapping("/edit-profile")
+    public String showEditProfileForm(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "edit-user-profile";
+    }
+
 
 }

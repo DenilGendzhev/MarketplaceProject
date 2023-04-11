@@ -3,6 +3,7 @@ package com.example.Marketplace.controllers;
 import com.example.Marketplace.entities.Ad;
 import com.example.Marketplace.entities.OrgManager;
 import com.example.Marketplace.repositories.AdRepository;
+import com.example.Marketplace.repositories.EventRepository;
 import com.example.Marketplace.repositories.OrgManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ public class OrgManagerController {
     @Autowired
     OrgManagerRepository orgManagerRepository;
     AdRepository adRepository;
+    EventRepository eventRepository;
 
     @GetMapping("/sign-in")
     public String showRegistrationForm(Model model) {
