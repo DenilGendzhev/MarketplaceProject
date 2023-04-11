@@ -1,5 +1,7 @@
 package com.example.Marketplace.entities;
 
+import com.example.Marketplace.enums.Role;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 
@@ -13,6 +15,8 @@ public class OrgManager {
     @Email
     private String email;
     private String password;
+
+    private Role role ;
     private int adID;
 
     public Integer getId() {
@@ -38,6 +42,12 @@ public class OrgManager {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+    public Role getRole() {
+        return role;
+    }
+    public void setRole(Role role) {
+        this.role = role;
     }
     public int getAdID() {
         return adID;

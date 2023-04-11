@@ -6,9 +6,16 @@ import com.example.Marketplace.entities.User;
 import com.example.Marketplace.enums.Role;
 import com.example.Marketplace.repositories.UserRepository;
 import com.example.Marketplace.services.UserService;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockitoAnnotations;
 
 public class UserCreationTest {
+    @BeforeEach
+    public void setup() {
+        MockitoAnnotations.openMocks(this);
+    }
 @Test
     public void testCreateUser() {
     User user = new User();
@@ -18,6 +25,6 @@ public class UserCreationTest {
     user.setPassword("123456789");
     user.setRole(Role.USER);
 
-    //User savedUser = UserRepository.save(user);
+    //User savedUser = UserRepository.saved(user);
 }
 }
